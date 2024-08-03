@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Password Generator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Password Generator</h1>
+
+        <label for="length">Password Length: <span id="lengthValue">12</span></label>
+        <input type="range" id="length" min="6" max="20" value="12" oninput="generatePassword()">
+
+        <label for="complexity">Complexity:</label>
+        <button onclick="toggleComplexity()" id="toggleValue">Toggle</button>
+        <label for="lowercase">Include Lowercase Letters:</label>
+        <input type="checkbox" id="lowercase" onchange="generatePassword()" checked>
+
+        <label for="uppercase">Include Uppercase Letters:</label>
+        <input type="checkbox" id="uppercase" onchange="generatePassword()" checked>
+
+        <label for="numbers">Include Numbers:</label>
+        <input type="checkbox" id="numbers" onchange="generatePassword()" checked>
+
+        <label for="symbols">Include Symbols:</label>
+        <input type="checkbox" id="symbols" onchange="generatePassword()" checked>
+        <button onclick="generatePassword()">Generate</button>
+        <input type="text" id="password" readonly>
+        <br /> <br>
+        <p id="entropy-value"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
